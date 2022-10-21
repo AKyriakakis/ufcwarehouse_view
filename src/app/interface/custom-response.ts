@@ -1,3 +1,4 @@
+import { Competition } from "./competition";
 import { Fighter } from "./fighter";
 
 /*  
