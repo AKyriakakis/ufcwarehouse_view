@@ -1,4 +1,4 @@
-import { Beer } from "./beer";
+import { Fighter } from "./fighter";
 
 /*  
 * Custom Response interface for HTTP Requests
@@ -10,5 +10,5 @@ export interface CustomResponse {
     reason: string;
     message: string;
     devMessage: string;
-    data: { beers?: Beer[], beer?: Beer }
+    data: { fighters?: Fighter[], fighter?: Fighter, competitions?: Competition[] }
 }
