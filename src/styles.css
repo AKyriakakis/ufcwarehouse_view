@@ -6,14 +6,19 @@ table, mat-paginator {
   width: 80%;
 }
   
-.table-wrapper {
+#app-header {
   text-align: -webkit-center;
   overflow: hidden;
 }
 
-.table-title {
+#app-title {
   padding-top: 20px;
   background-color: #810c17;
+}
+
+#app-footer {
+    height: 37px;
+    background-color: #810c17;
 }
 
 .ng-input>input {
@@ -22,4 +27,11 @@ table, mat-paginator {
 
 .ng-select .ng-input {
     cursor: pointer;
+ }
+
+ h4 {
+    color: rgb(234, 56, 56);
+    font: 700 14px/2 KlavikaWebCondensed,"Arial Narrow",Arial,sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
  }

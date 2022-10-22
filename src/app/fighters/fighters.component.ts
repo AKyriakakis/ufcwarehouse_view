@@ -42,6 +42,8 @@ export class FightersComponent implements OnInit {
   constructor(private router: Router, @Inject(FighterService) private fighterService: FighterService) { }
 
   ngOnInit(): void {
+    // Hide footer
+    document.getElementById('app-footer')!.style.display = 'none';
     this.list(this.fighterService.fighters$);
   }
 
@@ -53,8 +55,9 @@ export class FightersComponent implements OnInit {
     this.appState$ = response
     .pipe(
       map(response => {
-        console.log(response.data);
         this.dataSource = new MatTableDataSource(response.data.fighters!);
+        // Show footer
+        document.getElementById('app-footer')!.style.display = 'block';
         // Customize filter to search only in name, nickname, age and weightclass fields
         this.dataSource.filterPredicate = (data: {name: string, nickname: string, age: number, weightclass: string}, filterValue: string) =>
           data.name.trim().toLowerCase().indexOf(filterValue) !== -1 ||
@@ -82,6 +85,9 @@ export class FightersComponent implements OnInit {
         break;
       } case "COMPETITIONS": {
         this.router.navigate(['competitions']);
+        break;
+      } case "RANKINGS": {
+        this.router.navigate(['rankings']);
         break;
       } default: {
         this.router.navigate(['fighters']);

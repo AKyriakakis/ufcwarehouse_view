@@ -39,6 +39,7 @@ export class CompetitionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.getElementById('app-footer')!.style.display = 'none';
     this.list(this.competitionsService.competitions$);
   }
 
@@ -50,8 +51,9 @@ export class CompetitionsComponent implements OnInit {
     this.appState$ = response
     .pipe(
       map(response => {
-        console.log(response.data);
         this.dataSource = new MatTableDataSource(response.data.competitions!);
+        document.getElementById('app-footer')!.style.display = 'block';
+
         // Customize filter to search only in name field
         this.dataSource.filterPredicate = (data: {name: string}, filterValue: string) =>
           data.name.trim().toLowerCase().indexOf(filterValue) !== -1;
@@ -76,6 +78,9 @@ export class CompetitionsComponent implements OnInit {
         break;
       } case "COMPETITIONS": {
         this.router.navigate(['competitions']);
+        break;
+      } case "RANKINGS": {
+        this.router.navigate(['rankings']);
         break;
       } default: {
         this.router.navigate(['competitions']);

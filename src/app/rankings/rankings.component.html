@@ -1,0 +1,276 @@
+<ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
+  <ng-container *ngSwitchCase="DataState.LOADING">
+    <!--Loading Spinner -->
+    <div class="col-md-12 single-note-item text-center">
+      <div class="spinner-border text-info" role="status"></div> 
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="DataState.LOADED">
+    <div class="table table-striped table-hover" id="fighters">
+
+      <div class="row">
+        <div class="col-sm-6">
+        </div>
+        <br><br><br><br>
+
+        <div class="col-sm-6">
+          <!-- Select Page Navigator -->
+          <span>
+            <select (ngModelChange)="onNavigate($event)" ngModel="DEFAULT" name="list" class="btn btn-info">
+              <option hidden value="DEFAULT">Rankings</option>
+              <option value="FIGHTERS">Fighters</option>
+              <option value="COMPETITIONS">Events Archive</option>
+              <option value="RANKINGS">Rankings</option>
+            </select>
+          </span>
+        </div>
+      </div>
+      <div id="allRankingsDiv">
+        <div class="row">
+          <div class="rankingsTableDiv">
+            <h4>Pound For Pound</h4>
+            <table mat-table [dataSource]="dataSourceP4P" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+              
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="rankingsTableDiv">
+            <h4>Flyweight</h4>
+            <table mat-table [dataSource]="dataSourceFLW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="rankingsTableDiv">
+            <h4>Batntamweight</h4>
+            <table mat-table [dataSource]="dataSourceBW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="rankingsTableDiv">
+            <h4>Featherweight</h4>
+            <table mat-table [dataSource]="dataSourceFW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+              
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="rankingsTableDiv">
+            <h4>Lightweight</h4>
+            <table mat-table [dataSource]="dataSourceLW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="rankingsTableDiv">
+            <h4>Welterweight</h4>
+            <table mat-table [dataSource]="dataSourceWW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="rankingsTableDiv">
+            <h4>Middleweight</h4>
+            <table mat-table [dataSource]="dataSourceMW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+              
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="rankingsTableDiv">
+            <h4>Lightheavyweight</h4>
+            <table mat-table [dataSource]="dataSourceLHW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="rankingsTableDiv">
+            <h4>Heavyweight</h4>
+            <table mat-table [dataSource]="dataSourceHW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="rankingsTableDiv">
+            <h4>Women's Straweight</h4>
+            <table mat-table [dataSource]="dataSourceWSW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+              
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="rankingsTableDiv">
+            <h4>Women's Flyweight</h4>
+            <table mat-table [dataSource]="dataSourceWFW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="rankingsTableDiv">
+            <h4>Women's Batntamweight</h4>
+            <table mat-table [dataSource]="dataSourceWBW" class="mat-elevation-z8">
+              <!-- Name Column -->
+              <ng-container matColumnDef="rank">
+                <th mat-header-cell *matHeaderCellDef> Rank </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.rank == 0 ? 'C' : ranking.rank }} </td>
+              </ng-container>
+
+              <!-- Rank Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let ranking"> {{ ranking.competitor.name }} </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="DataState.ERROR">
+    <!-- Error Container -->
+    <div class="alert-danger">
+      {{ appState.error }}
+    </div>
+  </ng-container>
+</ng-container>
+  
