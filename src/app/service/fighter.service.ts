@@ -13,7 +13,7 @@ export class FighterService {
 
   constructor(private http: HttpClient) {}
 
-  private readonly apiUrl = 'http://localhost:3000/api/v1'
+  private readonly apiUrl = 'https://ufcwarehouse.herokuapp.com/api/v1'
 
   /**
   * HTTP Request retireve all fighters from the database

@@ -1,34 +1,42 @@
 {
   "name": "ufcwarehouse",
   "version": "0.0.0",
+  "engines": {
+    "node": "19.0.0",
+    "npm": "8.19.2"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "postinstall": "ng build"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "^14.2.6",
     "@angular/animations": "^14.0.0",
     "@angular/cdk": "^14.0.2",
+    "@angular/cli": "~14.0.2",
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
+    "@angular/compiler-cli": "^14.0.0",
     "@angular/core": "^14.0.0",
     "@angular/forms": "^14.0.0",
     "@angular/material": "^14.0.2",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "primeng": "^13.4.1",
+    "express": "^4.18.2",
+    "npm-check-updates": "^16.3.15",
+    "primeng": "14.1.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.0.2",
-    "@angular/cli": "~14.0.2",
-    "@angular/compiler-cli": "^14.0.0",
+    "@angular-devkit/build-angular": "^14.2.6",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
