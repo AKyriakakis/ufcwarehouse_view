@@ -1,18 +1,25 @@
 .rankingsTableDiv {
     width: 27%;
-    margin: 0 auto;
+}
+
+#allRankingsDiv .row {
+    justify-content: center;
+}
+
+#rankingsSelectDiv {
+    height: 65px;
 }
 
 tr.mat-row, tr.mat-footer-row {
     height: 25px;
 }
 
-th.mat-header-cell, td.mat-cell {
-    text-align: center;
-}
-
 tr.mat-header-row {
     height: 32px;
+}
+
+th.mat-header-cell, td.mat-cell {
+    text-align: center;
 }
 
 th.mat-header-cell {
