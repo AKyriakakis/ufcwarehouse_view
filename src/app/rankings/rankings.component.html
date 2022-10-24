@@ -8,7 +8,7 @@
   <ng-container *ngSwitchCase="DataState.LOADED">
     <div class="table table-striped table-hover" id="fighters">
 
-      <div class="row">
+      <div id="rankingsSelectDiv" class="row">
         <div class="col-sm-6">
         </div>
         <br><br><br><br>
@@ -65,7 +65,7 @@
             </table>
           </div>
           <div class="rankingsTableDiv">
-            <h4>Batntamweight</h4>
+            <h4>Bantamweight</h4>
             <table mat-table [dataSource]="dataSourceBW" class="mat-elevation-z8">
               <!-- Name Column -->
               <ng-container matColumnDef="rank">

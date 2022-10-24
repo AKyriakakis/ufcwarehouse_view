@@ -1,6 +1,13 @@
 .rankingsTableDiv {
     width: 27%;
-    margin: 0 auto;
+}
+
+#allRankingsDiv .row {
+    justify-content: center;
+}
+
+#rankingsSelectDiv {
+    height: 65px;
 }
 
 tr.mat-row, tr.mat-footer-row {

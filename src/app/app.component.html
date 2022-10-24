@@ -1,23 +1,20 @@
 <mat-sidenav-container fullscreen>
-<div id="app-header">
-  <!-- Header -->
-  <div id="app-title">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2>UFC Warehouse</h2>
+<div id="page-container">
+  <div id="content-wrap">
+    <!-- Header -->
+    <div id="app-title">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>UFC Warehouse</h2>
+        </div>
       </div>
     </div>
-  </div>
-  <br>
-  <div class="container-x1">
-    <router-outlet></router-outlet>
+    <br>
+    <div class="container-x1">
+      <router-outlet></router-outlet>
+    </div>
   </div>
   <!-- Footer -->
-  <div id="app-footer" class="hidden">
-    <div class="row">
-      <div class="col-sm-12">
-      </div>
-    </div>
-  </div>
+  <footer id="app-footer" class="hidden"></footer>
 </div>
 </mat-sidenav-container>

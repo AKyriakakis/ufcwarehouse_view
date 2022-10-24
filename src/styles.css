@@ -5,33 +5,82 @@
 table, mat-paginator {
   width: 80%;
 }
-  
-#app-header {
-  text-align: -webkit-center;
-  overflow: hidden;
-}
-
-#app-title {
-  padding-top: 20px;
-  background-color: #810c17;
-}
-
-#app-footer {
-    height: 37px;
-    background-color: #810c17;
-}
 
 .ng-input>input {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
 .ng-select .ng-input {
-    cursor: pointer;
- }
+  cursor: pointer;
+}
 
- h4 {
-    color: rgb(234, 56, 56);
-    font: 700 14px/2 KlavikaWebCondensed,"Arial Narrow",Arial,sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
- }
+h4 {
+  color: rgb(234, 56, 56);
+  font: 700 14px/2 KlavikaWebCondensed,"Arial Narrow",Arial,sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mat-drawer-container {
+  background-color: rgb(26, 28, 28);
+  color: rgba(220, 219, 216, 0.87);
+}
+
+.btn-info {
+  color: rgb(220, 219, 216);
+  background-color: rgb(17, 123, 140);
+  border-color: rgb(20, 143, 162);
+}
+
+.table td, .table th {
+  border-top-color: rgb(53, 58, 60);
+}
+
+.mat-table {
+  background-image: initial;
+  background-color: rgb(23, 25, 26);
+}
+
+mat-row, mat-header-row, mat-footer-row, th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  border-bottom-color: rgba(133, 123, 109, 0.12);
+  vertical-align: middle;
+}
+
+.mat-cell, .mat-footer-cell {
+  color: rgba(220, 219, 216, 0.87);
+}
+
+.mat-header-cell {
+  color: rgba(220, 219, 216, 0.54);
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  border-bottom-color: rgb(53, 58, 60);
+}
+
+.mat-paginator {
+  background-image: initial;
+  background-color: rgb(23, 25, 26);
+}
+
+.mat-icon {
+  color: rgb(199, 195, 189);
+}
+
+.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
+  color: rgba(220, 219, 216, 0.54);
+}
+
+.mat-input-element {
+  caret-color: rgb(104, 142, 194);
+}
+
+.mat-input-element::placeholder {
+  color: #363636;
+}
+
+.mat-button.mat-primary.mat-button-disabled, .mat-button.mat-accent.mat-button-disabled, .mat-button.mat-warn.mat-button-disabled, .mat-button.mat-button-disabled.mat-button-disabled, .mat-icon-button.mat-primary.mat-button-disabled, .mat-icon-button.mat-accent.mat-button-disabled, .mat-icon-button.mat-warn.mat-button-disabled, .mat-icon-button.mat-button-disabled.mat-button-disabled, .mat-stroked-button.mat-primary.mat-button-disabled, .mat-stroked-button.mat-accent.mat-button-disabled, .mat-stroked-button.mat-warn.mat-button-disabled, .mat-stroked-button.mat-button-disabled.mat-button-disabled {
+  color: rgba(220, 219, 216, 0.26);
+}
