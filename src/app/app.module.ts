@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CompetitionsComponent } from './competitions/competitions.component';
@@ -41,6 +42,7 @@ const routes: Routes = [
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    NgbModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

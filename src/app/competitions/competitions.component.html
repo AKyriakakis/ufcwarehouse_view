@@ -16,17 +16,19 @@
             <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
           </mat-form-field>
         </div>
-
+        <br><br><br><br>
+        <!-- Select Page Navigator -->
         <div class="col-sm-6">
-          <!-- Select Page Navigator -->
-          <span>
-            <select (ngModelChange)="onNavigate($event)" ngModel="DEFAULT" name="list" class="btn btn-info">
-              <option hidden value="DEFAULT">Events Archive</option>
-              <option value="FIGHTERS">Fighters</option>
-              <option value="COMPETITIONS">Events Archive</option>
-              <option value="RANKINGS">Rankings</option>
-            </select>
-          </span>
+          <br/>
+          <div ngbDropdown>
+            <button class="btn btn-info" id="pageNavigatorDropdown" 
+                    ngbDropdownToggle>Events Archive</button>
+            <div ngbDropdownMenu="pageNavigatorDropdown">
+              <button (click)="onNavigate('FIGHTERS')" ngbDropdownItem>Fighters</button>
+              <button (click)="onNavigate('COMPETITIONS')" ngbDropdownItem>Events Archive</button>
+              <button (click)="onNavigate('RANKINGS')" ngbDropdownItem>Rankings</button>
+            </div>
+          </div>
         </div>
       </div>
 

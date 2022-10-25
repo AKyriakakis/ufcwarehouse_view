@@ -6,10 +6,6 @@
     justify-content: center;
 }
 
-#rankingsSelectDiv {
-    height: 65px;
-}
-
 tr.mat-row, tr.mat-footer-row {
     height: 25px;
 }
